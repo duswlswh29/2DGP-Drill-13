@@ -36,9 +36,13 @@ def init():
     common.balls=[Ball(random.randint(100,common.court.w-50),random.randint(100,common.court.h-50))for _ in range(100)]
     game_world.add_objects(common.balls, 1)
 
+    game_world.add_collision_pair('boy:ball',common.boy,None)
+    for ball in common.balls:
+        game_world.add_collision_pair('boy:ball',None,ball)
 
 def finish():
     game_world.clear()
+    common.balls=[]
     pass
 
 
