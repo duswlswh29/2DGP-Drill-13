@@ -5,7 +5,7 @@ import common
 class Ball:
     image=None
 
-def init(self,x,y):
+def init(self,x=None,y=None):
     if Ball.image is None:
         Ball.image=load_image('ball21x21.png')
     self.x=x
